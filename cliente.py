@@ -6,6 +6,7 @@ import os
 
 class Cliente():
 
+	#Funcion init
 	def __init__(self, host=socket.gethostname(), port=59989):
 		self.sock = socket.socket()
 		self.sock.connect((str(host), int(port)))
@@ -23,7 +24,7 @@ class Cliente():
 				print(" **** TALOGOOO  ****")
 				self.sock.close()
 				sys.exit()
-
+	#Funcion recibir
 	def recibir(self):
 		while True:
 			try:
@@ -32,10 +33,8 @@ class Cliente():
 					print(pickle.loads(data))
 			except:
 				pass
-
+	#Funcion enviar
 	def enviar(self, msg):
 		self.sock.send(pickle.dumps(msg))
 
 c = Cliente()
-
-		
