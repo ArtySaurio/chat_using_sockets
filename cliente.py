@@ -37,4 +37,5 @@ class Cliente():
 	def enviar(self, msg):
 		self.sock.send(pickle.dumps(msg))
 
+#HOLAAAAAAAAAAAAAAAAAAAAAAAAAAA
 c = Cliente()
